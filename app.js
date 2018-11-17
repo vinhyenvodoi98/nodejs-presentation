@@ -50,6 +50,7 @@ var presentation = io.on('connection', function (socket) {
 
 		// Check the secret key again
 
+		console.log(data);
 		if(data.key === secret) {
 
 			// Tell all connected clients to navigate to the new slide
@@ -61,6 +62,17 @@ var presentation = io.on('connection', function (socket) {
 
 	});
 
+	socket.on('text-flyout', data =>{
+
+		console.log(data);
+
+		if(data.key === secret ){
+
+			presentation.emit('text-flyin',{
+				hash: data.hash
+			});
+		}
+	});
 });
 
 console.log('Your presentation is running on http://localhost:' + port);

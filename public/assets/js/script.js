@@ -45,12 +45,23 @@ $(function() {
 		// Check if we have "granted" access.
 		// If we do, we can continue with the presentation.
 
+		const slides = document.querySelector('#slide1');
+
 		if(data.access === "granted") {
 
 			// Unblur everything
 			presentation.removeClass('blurred');
 
 			form.hide();
+	
+			
+			$(document).ready(function(){
+				$("p").hide();
+			});
+			// slides.onclick = () => {
+			// 	$("p").show(1000);
+			// 	title();
+			// }
 
 			var ignore = false;
 
@@ -71,6 +82,23 @@ $(function() {
 					key: key
 				});
 			});
+
+			// gui thong diep hien thi text
+			slides.onclick = () => {
+				socket.emit('text-flyout', {
+					// hash: 1,
+					hash: '$("p").show(1000)',
+					key: key
+				});
+			};
+			
+			// nhan thong diep hien thi text o cac client
+			socket.on('text-flyin', data => {
+				// if (data.hash==1){
+				// 	$("p").show(1000);
+				// };
+				eval(data.hash);
+			})
 
 			socket.on('navigate', function(data){
 	
@@ -100,11 +128,21 @@ $(function() {
 			// Addding the "animation" class triggers the CSS keyframe
 			// animation that shakes the text input.
 
+			
+
 			secretTextBox.addClass('denied animation');
 			
 			animationTimeout = setTimeout(function(){
 				secretTextBox.removeClass('animation');
 			}, 1000);
+
+			// $(document).ready(function(){
+			// 	$("p").hide();
+			// });
+			// slides.onclick = () => {
+			// 	$("p").show(1000);
+			// 	title();
+			// }
 
 			form.show();
 		}
