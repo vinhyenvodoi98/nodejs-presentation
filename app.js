@@ -27,7 +27,7 @@ app.use(express.static(__dirname + '/public'));
 // This is a secret key that prevents others from opening your presentation
 // and controlling it. Change it to something that only you know.
 
-var secret = 'kittens';
+var secret = '132';
 
 // Initialize a new socket.io application
 
@@ -62,13 +62,22 @@ var presentation = io.on('connection', function (socket) {
 
 	});
 
-	socket.on('text-flyout', data =>{
+	socket.on('text-flyout', data => {
 
 		console.log(data);
 
 		if(data.key === secret ){
 
 			presentation.emit('text-flyin',{
+				hash: data.hash
+			});
+		}
+	});
+
+	socket.on('text-up', data => {
+		
+		if(data.key === secret){
+			presentation.emit('text-up',{
 				hash: data.hash
 			});
 		}

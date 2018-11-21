@@ -74,7 +74,7 @@ form.login span {
 	font-size: 18px;
 }
 
-form.login input[type=text] {
+form.login input[type=password] {
 	position: relative;
 	left: -5px;
 	width: 160px;
@@ -87,12 +87,12 @@ form.login input[type=text] {
 	margin-top: 26px;
 }
 
-form.login input[type=text].denied {
+form.login input[type=password].denied {
 	border: 1px solid red;
 	outline: none;
 }
 
-form.login input[type=text].animation {
+form.login input[type=password].animation {
 	transition: 0.1s;
 	-webkit-animation-name: shakeMe;
 	-webkit-animation-duration: 0.6s;
@@ -102,7 +102,7 @@ form.login input[type=text].animation {
 	animation-delay: 0s;
 }
 
-form.login input[type=text]::-webkit-input-placeholder {
+form.login input[type=password]::-webkit-input-placeholder {
 	color: #ABABAB;
 }
 
@@ -203,4 +203,24 @@ form.login input[type=submit] {
 .s1{
 	max-width: 100%;
 	max-height: 100%;
+}
+
+.QR{
+	width: 250px;
+	height: 250px;
+}
+
+#whatarews{
+	margin-top: 200px; 
+	font-size: 70px;
+	transition: all 1s;
+}
+
+.colum{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: stretch;
+	align-content: stretch;
 }
