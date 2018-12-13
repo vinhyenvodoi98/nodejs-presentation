@@ -211,16 +211,45 @@ form.login input[type=submit] {
 }
 
 #whatarews{
+	text-align: left;
+	/* 	
 	margin-top: 200px; 
 	font-size: 70px;
+	transition: all 1s; */
+}
+
+#wireless{
+	text-align: center;
+}
+
+#text-introduction,
+#text-introduction1,
+#text-introduction2,
+#text-introduction3,
+#text-introduction4{
+	text-align: left;
+}
+
+#networktypes{
+	height: 100%; 
+	width: 350%;
 	transition: all 1s;
 }
 
-.colum{
+.body-graphic{
 	display: flex;
 	flex-direction: row;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 	justify-content: space-around;
 	align-items: stretch;
 	align-content: stretch;
+}
+
+.graphic{
+    text-align: left;
+    font-size: 30px;
+}
+
+#howmanynetwork{
+	margin-bottom: 50px;
 }

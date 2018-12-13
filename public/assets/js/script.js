@@ -42,6 +42,10 @@ $(function() {
 
 		const Whatarews = document.querySelector('#whatarews');
 
+		const howmanynetwork = document.querySelector('#howmanynetwork');
+
+		const networktypes = document.querySelector('#networktypes');
+
 		if(data.access === "granted") {
 
 			// Unblur everything
@@ -51,7 +55,20 @@ $(function() {
 	
 			
 			$(document).ready(function(){
-				$("p").hide();
+				$("#text-introduction").hide();
+				$("#text-introduction1").hide();
+				$("#text-introduction2").hide();
+				$("#text-introduction3").hide();
+				$("#text-introduction4").hide();
+				$("#graphic").hide();
+				$("#graphic1").hide();
+				$("#graphic2").hide();
+				$("#graphic3").hide();
+				$("#graphic4").hide();
+				$("#graphic5").hide();
+				$("#graphic6").hide();
+				$("#graphic7").hide();
+				$("#graphic8").hide();
 			});
 
 			var ignore = false;
@@ -75,18 +92,21 @@ $(function() {
 			// gui thong diep hien thi text
 			slides.onclick = () => {
 				socket.emit('text-flyout', {
-					// hash: 1,
-					hash: '$("p").show(1000)',
+					hash: 1,
 					key: key
 				});
 			};
 			
+
 			// nhan thong diep hien thi text o cac client
 			socket.on('text-flyin', data => {
-				// if (data.hash==1){
-				// 	$("p").show(1000);
-				// };
-				eval(data.hash);
+				if (data.hash==1){
+					$("#text-introduction").show(1000);
+					$("#text-introduction1").show(1000);
+					$("#text-introduction2").show(1000);
+					$("#text-introduction3").show(1000);
+					$("#text-introduction4").show(1000);
+				};
 			})
 
 			// what are websocket up
@@ -97,11 +117,36 @@ $(function() {
 				});
 			}
 
-			socket.on('text-up', data => {
-				if(data.hash == 1){
-					Whatarews.style.marginTop = '0px';
+			//slide thu 3
+			howmanynetwork.onclick =() => {
+				socket.emit('text-howmany',{
+					hash: 1,
+					key : key
+				});
+			}
+
+			socket.on('text-howmany', data =>{
+				if(data.hash ==  1){
+					networktypes.style.width = '50%' ;
+					$.when( $("#graphic8").show(1500)).done( ()=> {
+						$("#graphic").show(1000);
+						$("#graphic1").show(1000);
+						$("#graphic2").show(1000);
+						$("#graphic3").show(1000);
+						$("#graphic4").show(1000);
+						$("#graphic5").show(1000);
+						$("#graphic6").show(1000);
+						$("#graphic7").show(1000);
+					});				
 				}
-			})
+			});
+
+
+			// socket.on('text-up', data => {
+			// 	if(data.hash == 1){
+					// Whatarews.style.marginTop = '0px';
+			// 	}
+			// })
 
 			socket.on('navigate', function(data){
 	

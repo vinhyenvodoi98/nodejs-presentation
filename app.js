@@ -74,6 +74,14 @@ var presentation = io.on('connection', function (socket) {
 		}
 	});
 
+	socket.on('text-howmany', data => {
+		if(data.key === secret ){
+			presentation.emit('text-howmany',{
+				hash: data.hash
+			});
+		}
+	});
+
 	socket.on('text-up', data => {
 		
 		if(data.key === secret){
