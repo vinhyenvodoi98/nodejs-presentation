@@ -1,8 +1,3 @@
-// This is the server-side file of our mobile remote controller app.
-// It initializes socket.io and a new express instance.
-// Start it by running 'node app.js' from your terminal.
-
-
 // Creating an express server
 
 var express = require('express'),
