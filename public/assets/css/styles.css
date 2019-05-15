@@ -1,5 +1,5 @@
 /*-- Simple CSS Reset -- */
-
+@import "category.css";
 
 * {
 	padding: 0;
@@ -31,7 +31,7 @@ body {
 	padding-top: 22px;
 	font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 	font-weight: bold;
-	color: white;
+	color: rgb(0, 0, 0);
 }
 
 .homebannertext span {
@@ -40,7 +40,7 @@ body {
 
 #logo {
 	text-decoration: none;
-	color:white !important;
+	/* color:white !important; */
 }
 
 /* -- Slide styles -- */
@@ -231,9 +231,38 @@ form.login input[type=submit] {
     left: -250px;
 }
 
-.studentlife{
+.blacktext{
 	color: black !important;
+}
+
+.redtext{
+	color: #d6441b !important;
+}
+
+.chaptertext{
+	font-size: 100px;
+}
+
+.studentlife{
     font-size: 150px;
     margin: auto;
     width: 460px;
 }
+
+.chapter_cover{
+	height: 520px ;
+	top: 70px ;
+}
+
+.chapter{
+	position: absolute;
+	left: -180px !important;
+	width: 570px !important;
+}
+
+.underline{
+	background-color:red;
+	height: 5px;
+	width: 100%;
+}
+
