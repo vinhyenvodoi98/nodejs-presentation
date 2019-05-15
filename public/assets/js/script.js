@@ -72,13 +72,13 @@ $(()=> {
 			});
 
 			// gui thong diep hien thi text
-			slides.onclick = () => {
-				socket.emit('text-flyout', {
-					// hash: 1,
-					hash: '$("p").show(1000)',
-					key: key
-				});
-			};
+			// slides.onclick = () => {
+			// 	socket.emit('text-flyout', {
+			// 		// hash: 1,
+			// 		hash: '$("p").show(1000)',
+			// 		key: key
+			// 	});
+			// };
 
 			// nhan thong diep hien thi text o cac client
 			socket.on('text-flyout', data => {
@@ -89,12 +89,12 @@ $(()=> {
 			})
 
 			// what are websocket up
-			Whatarews.onclick = () => {
-				socket.emit('text-up',{
-					hash: 1,
-					key: key
-				});
-			}
+			// Whatarews.onclick = () => {
+			// 	socket.emit('text-up',{
+			// 		hash: 1,
+			// 		key: key
+			// 	});
+			// }
 
 			socket.on('text-up', data => {
 				if(data.hash == 1){
