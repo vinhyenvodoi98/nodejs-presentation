@@ -29,7 +29,7 @@ body {
 .homebannertext {
 	text-align: center;
 	padding-top: 22px;
-	font-family: 'Open Sans Condensed',serif;
+	font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 	font-weight: bold;
 	color: white;
 }
@@ -211,7 +211,7 @@ form.login input[type=submit] {
 }
 
 #whatarews{
-	margin-top: 200px; 
+	margin-top: 200px;
 	font-size: 70px;
 	transition: all 1s;
 }
@@ -223,4 +223,17 @@ form.login input[type=submit] {
 	justify-content: space-around;
 	align-items: stretch;
 	align-content: stretch;
+}
+
+.biaposition{
+	position: absolute;
+    top: 100px;
+    left: -250px;
+}
+
+.studentlife{
+	color: black !important;
+    font-size: 150px;
+    margin: auto;
+    width: 460px;
 }

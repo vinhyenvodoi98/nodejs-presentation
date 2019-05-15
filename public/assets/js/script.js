@@ -1,10 +1,10 @@
-$(function() {
+$(()=> {
 
 	Reveal.initialize({
 		history: true		//xác nhận các slide bằng việc chuyển url
 	});
 
-	// ket noi socket 
+	// ket noi socket
 
 	var socket = io();
 
@@ -17,7 +17,7 @@ $(function() {
 	var key = "", animationTimeout;
 
 
-	form.submit(function(e){
+	form.submit((e)=>{
 
 		e.preventDefault();
 
@@ -31,9 +31,9 @@ $(function() {
 
 	});
 
-	// các kết nối sẽ tiếp tục nếu có cùng pass cho trước 
+	// các kết nối sẽ tiếp tục nếu có cùng pass cho trướcs
 
-	socket.on('access', function(data){
+	socket.on('access', (data)=>{
 
 		// Check if we have "granted" access.
 		// If we do, we can continue with the presentation.
@@ -48,17 +48,16 @@ $(function() {
 			presentation.removeClass('blurred');
 
 			form.hide();
-	
-			
-			$(document).ready(function(){
+
+			$(document).ready(()=>{
 				$("p").hide();
 			});
 
 			var ignore = false;
 
-			$(window).on('hashchange', function(){
+			$(window).on('hashchange', ()=>{
 
-				// chuyển tín hiệu chuyển slide 
+				// chuyển tín hiệu chuyển slide
 
 				if(ignore){
 					return;
@@ -80,9 +79,9 @@ $(function() {
 					key: key
 				});
 			};
-			
+
 			// nhan thong diep hien thi text o cac client
-			socket.on('text-flyin', data => {
+			socket.on('text-flyout', data => {
 				// if (data.hash==1){
 				// 	$("p").show(1000);
 				// };
@@ -103,15 +102,15 @@ $(function() {
 				}
 			})
 
-			socket.on('navigate', function(data){
-	
-				// tất cả các slide sẽ chuyển 
+			socket.on('navigate', (data)=>{
+
+				// tất cả các slide sẽ chuyển
 
 				window.location.hash = data.hash;
 
 				ignore = true;
 
-				setInterval(function () {
+				setInterval( ()=> {
 					ignore = false;
 				},100);
 
@@ -124,11 +123,11 @@ $(function() {
 
 			clearTimeout(animationTimeout);
 
-			// thêm css vào font đăng nhập 			
+			// thêm css vào font đăng nhập
 
 			secretTextBox.addClass('denied animation');
-			
-			animationTimeout = setTimeout(function(){
+
+			animationTimeout = setTimeout(()=>{
 				secretTextBox.removeClass('animation');
 			}, 1000);
 
