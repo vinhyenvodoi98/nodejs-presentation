@@ -70,14 +70,6 @@ var presentation = io.on('connection', (socket) =>{
 		}
 	});
 
-	socket.on('text-up', data => {
-
-		if(data.key === secret){
-			presentation.emit('text-up',{
-				hash: data.hash
-			});
-		}
-	});
 });
 
 console.log('Your presentation is running on http://localhost:' + port);
