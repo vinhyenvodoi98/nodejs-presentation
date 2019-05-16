@@ -1,0 +1,36 @@
+.chapter_content_cover{
+    height: 80%;
+    width: 90%;
+	top: 0 !important ;
+}
+
+.tieude_noidung{
+    text-align: left !important
+}
+
+.category_content_profile{
+    text-align: left !important;
+    width: 70%;
+}
+
+.category_image{
+    width: 30%;
+    text-align: left !important
+}
+
+li{
+    text-shadow: none;
+    font-weight: bold !important;
+    padding: 5px 0px 5px !important;
+}
+
+.ul_profile{
+    left: -30px;
+    position: relative;
+}
+
+.textoverflow{
+    width: 200%;
+    margin: 0 !important;
+    margin-left: 115px !important;
+}

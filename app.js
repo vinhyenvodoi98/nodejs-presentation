@@ -23,6 +23,7 @@ app.use(express.static(__dirname + '/public'));
 // and controlling it. Change it to something that only you know.
 
 var secret = '132';
+var second = '123';
 
 // Initialize a new socket.io application
 
@@ -34,7 +35,7 @@ var presentation = io.on('connection', (socket) =>{
 	socket.on('load', (data)=> {
 
 		socket.emit('access', {
-			access: (data.key === secret ? "granted" : "denied")
+			access: (data.key === secret || second ? "granted" : "denied")
 		});
 
 	});

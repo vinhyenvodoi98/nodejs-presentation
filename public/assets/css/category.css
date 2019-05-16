@@ -10,9 +10,17 @@
 }
 
 .category_number{
+    display: flex;
+    text-align: left !important;
+    flex-direction: column;
+    justify-content: space-around;
     width: 50%;
 }
 
-.in_middel{
+.in_center{
+    margin-top:50% !important;
+}
 
+.blacktext > span{
+    margin-right: 20px !important;
 }

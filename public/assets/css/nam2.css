@@ -1,0 +1,15 @@
+.category_content_nam2{
+    text-align: left !important;
+    width: 65%;
+}
+
+.category_image_nam2{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+}
+
+.image_icon{
+    height: 150px;
+    width: 150px;
+}

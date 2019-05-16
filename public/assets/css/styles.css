@@ -1,5 +1,8 @@
 /*-- Simple CSS Reset -- */
 @import "category.css";
+@import "content_cover.css";
+@import "nam1.css";
+@import "nam2.css";
 
 * {
 	padding: 0;
@@ -250,8 +253,8 @@ form.login input[type=submit] {
 }
 
 .chapter_cover{
-	height: 520px ;
-	top: 70px ;
+	height: 80%;
+	top: 0 !important ;
 }
 
 .chapter{
