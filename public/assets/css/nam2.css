@@ -29,3 +29,8 @@
 .robot_github{
     height: 180px;
 }
+
+.column{
+    display: flex;
+    flex-direction: column;
+}

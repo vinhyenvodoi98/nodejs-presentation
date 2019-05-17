@@ -35,14 +35,13 @@ $(()=> {
 
 	socket.on('access', (data)=>{
 
-		// Check if we have "granted" access.
-		// If we do, we can continue with the presentation.
-
 		const robot_detail = document.querySelector('#robot_detail');
 		const robot_img = document.querySelector('#robot_img');
+		const shibaura = document.querySelector('#shibaura');
 		const blockchain_hackathon_img = document.querySelector('#blockchain_hackathon_img');
 		const blockchain_setivicate = document.querySelector('#blockchain_setivicate');
 		const category_content = document.querySelector('#category_content');
+		const demo = document.querySelector("#demo");
 		const content1 = document.querySelector('#content1');
 		const content2 = document.querySelector('#content2');
 		const content3 = document.querySelector('#content3');
@@ -51,12 +50,16 @@ $(()=> {
 		$(document).ready(()=>{
 			$("#robot_detail").hide();
 			$("#blockchain_setivicate").hide();
+			$("#shibaura").hide();
 			$("#content1").hide();
 			$("#content2").hide();
 			$("#content3").hide();
 			$("#content4").hide();
 			$("#content5").hide();
 		});
+
+		// Check if we have "granted" access.
+		// If we do, we can continue with the presentation.
 
 		if(data.access === "granted") {
 
@@ -119,6 +122,13 @@ $(()=> {
 				});
 			}
 
+			shibaura.onclick = () => {
+				socket.emit('text-flyout', {
+					hash: '11',
+					key: key
+				});
+			}
+
 			robot_img.onclick = () => {
 				socket.emit('text-flyout', {
 					hash: '12',
@@ -147,6 +157,13 @@ $(()=> {
 				});
 			}
 
+			demo.onclick = () =>{
+				socket.emit('text-flyout', {
+					hash: '16',
+					key: key
+				});
+			}
+
 			// nhan thong diep hien thi text o cac client
 			socket.on('text-flyout', data => {
 				if(data.hash == 1){
@@ -162,15 +179,18 @@ $(()=> {
 					$("#content4").show(1000);
 				}
 				if(data.hash == 5){
-					// content5.style.marginTop = '0px';
 					$("#content5").show(1000);
+				}
+				if(data.hash == 11){
+					$("#shibaura").hide(1000);
+					$("#robot_img").show(1000);
 				}
 				if (data.hash == 12){
 					$("#robot_img").hide(1000);
 					$("#robot_detail").show(1000);
 				};
 				if (data.hash == 13 ){
-					$("#robot_img").show(1000);
+					$("#shibaura").show(1000);
 					$("#robot_detail").hide(1000);
 				}
 				if (data.hash == 14 ){
@@ -180,6 +200,9 @@ $(()=> {
 				if (data.hash == 15 ){
 					$("#blockchain_hackathon_img").show(1000);
 					$("#blockchain_setivicate").hide(1000);
+				}
+				if (data.hash == 16 ){
+					window.location.href = "http://35.187.245.230/";
 				}
 			})
 
