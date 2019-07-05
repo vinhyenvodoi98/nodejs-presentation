@@ -1,112 +1,71 @@
 <!DOCTYPE html>
 
 <html>
-<head>
+  <head>
+    <meta charset="utf-8" />
 
-	<meta charset="utf-8">
+    <title>WEBSOCKET</title>
 
-	<title>WEBSOCKET</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"
+    />
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link type="text/css" rel="stylesheet" href="assets/css/styles.css" />
+    <link
+      href="//fonts.googleapis.com/css?family=Open+Sans:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
 
-	<link type="text/css" rel="stylesheet" href="assets/css/styles.css" />
-	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/revealjs/css/reveal.css" />
+    <link rel="stylesheet" href="assets/revealjs/css/theme/black.css" id="theme" />
+  </head>
 
-	<link rel="stylesheet" href="assets/revealjs/css/reveal.css">
-	<link rel="stylesheet" href="assets/revealjs/css/theme/black.css" id="theme">
+  <body>
+    <form class="login">
+      <span>What's your secret key?</span>
+      <input type="password" placeholder="Please enter your secret key!" />
 
-</head>
+      <input type="submit" value="➡" />
+    </form>
 
-<body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-background="assets/img/slide1.png">
+          <img class="QR" src="assets/img/remove.png" />
+        </section>
 
-	<form class="login">
-		<span>What's your secret key?</span>
-		<input type="password" placeholder="Please enter your secret key!"/>
-		
-		<input type="submit" value="➡"/>
-	</form>
+        <section data-background="assets/img/slide1.png"></section>
+        <section data-background="assets/img/slide2.png"></section>
+        <section data-background="assets/img/slide3.png"></section>
+        <section data-background="assets/img/slide4.png"></section>
+        <section data-background="assets/img/slide5.png"></section>
+        <section data-background="assets/img/slide6.png"></section>
+        <section data-background="assets/img/slide7.png"></section>
+        <section data-background="assets/img/slide8.png"></section>
+        <section data-background="assets/img/slide9.png"></section>
+        <section data-background="assets/img/slide10.png"></section>
+        <section data-background="assets/img/slide11.png"></section>
+        <section data-background="assets/img/slide12.png"></section>
+        <section data-background="assets/img/slide13.png"></section>
+      </div>
+    </div>
 
-	<div class="reveal">
-		<div class="slides">
+    <!-- them jquery-->
+    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
 
-			<section data-background="assets/img/fslide1.jpg">
-				<img class="QR" src="assets/img/remove.png">
-			</section>
+    <!-- them thu vien Reveal.js  -->
+    <script src="assets/revealjs/lib/js/head.min.js"></script>
+    <script src="assets/revealjs/js/reveal.js"></script>
 
-			<section data-background="assets/img/fslide1.jpg" style="left: 150px">
-				<div> 
-					<h1>WEBSOCKET</h1>
-				</div>
-			</section>
+    <!-- ket noi thu vien Socket.io-->
+    <script src="/socket.io/socket.io.js"></script>
 
-			<section data-background="assets/img/fslide.jpg" style="height: 520px ; top: 70px ;">
-				<div id="slide1" class="s1"> 
-					<div style="height: 250px;" >
-						<h2 id="whatarews">
-							WHAT ARE WEBSOCKET ?
-						</h2>
-					</div>
-					
-					<p style="text-align: left"> - Communication between a client (browser) and server </p>
-					<p style="text-align: left"> - Bidirectional (data flows both ways) </p>
-					<p style="text-align: left"> - Allows real-time data flow</p>
-				</div>
-			</section>
-
-			<section data-background="assets/img/fslide.jpg">
-				<img style="height: 100%; width: 350%;" src="assets/img/webchat.jpg" >
-			</section>
-
-			<section data-background="assets/img/fslide.jpg">
-				<div id="slide3" class="s1"> 
-						<div style="height: 150px;" >
-							<h2 id="usesof">
-								USES OF WEBSOCKETS
-							</h2>
-						</div>
-						
-						<p style="text-align: left"> - Multiplayer browser games </p>
-						<p style="text-align: left"> - Collaborative code editing </p>
-						<p style="text-align: left"> - Live text for sports/news websites</p>
-						<p style="text-align: left"> - Online drawing canvas</p>
-						<p style="text-align: left"> - Real-time to-do apps with multiple users</p>
-					</div>
-			</section>
-			<section data-background="assets/img/fslide.jpg">
-				<div class="colum">
-					<div>
-						<img src="assets/img/git.jpg" style="height: 250px; width: 250px;">
-					</div>
-					<div>
-						<img src="assets/img/github.png" style="height: 250px; width: 250px;">
-					</div>
-				</div>
-				<div style="margin-top: 40px">
-					<h5 style="font-size: 25px"> https://github.com/vinhyenvodoi98/nodejs-presentation </h5>
-				</div>
-			</section>
-			<section data-background="assets/img/thaskslide.jpg" style="left: -250px">
-				<h2>THANKS FOR LISTENING</h2>
-			</section>
-		</div>
-	</div>
-
-
-	<!-- them jquery-->
-	<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
-
-	<!-- them thu vien Reveal.js  -->
-	<script src="assets/revealjs/lib/js/head.min.js"></script>
-	<script src="assets/revealjs/js/reveal.js"></script>
-
-	<!-- ket noi thu vien Socket.io-->
-	<script src="/socket.io/socket.io.js"></script>
-
-	<!-- Main JavaScript -->
-	<script src="assets/js/script.js"></script>
-	
-</body>
+    <!-- Main JavaScript -->
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>
